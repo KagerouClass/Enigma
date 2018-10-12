@@ -1,4 +1,4 @@
-//************programmer:TSAI Chan-Chang²ÌÕ¹è°*******************//
+//************programmer:TSAI Chan-Chang, zju*******************//
 //***********************ID:3150105426******************************//
 #include<stdio.h>
 #include<string.h>
