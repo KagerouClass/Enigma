@@ -1,4 +1,4 @@
-//************programmer:TSAI Chan-Chang²ÌÕ¹è°******************//
+//************programmer:TSAI Chan-ChangÂ²ÃŒÃ•Â¹Ã¨Â°*******************//
 //***********************ID:3150105426******************************//
 #include<stdio.h>
 #include<string.h>
@@ -13,7 +13,7 @@ char rotorTable[5][27] =
 char reflector[] = "YRUHQSLDPXNGOKMIEBFZCWVJAT";
 char stepChar[5] = "RFWKA"; // Royal Flags Wave Kings Above
 char plugBoard[] = "ZNVDEFTYKUILPBOMWRXGJCQSHA";
-int rotorNum[3] = { 5, 3, 2 };//rotor¢ó 22->23                 rotor¢ò 5->6 
+int rotorNum[3] = { 5, 3, 2 };//rotorÂ¢Ã³ 22->23                 rotorÂ¢Ã² 5->6 
 char ringSetting[3] = { 'W', 'E', 'B'};
 char messageKey[3];
 char *enigma_encrypt_decrypt(char *p);
@@ -91,16 +91,16 @@ char *enigma_encrypt_decrypt(char *cipher)
 		temp = plugBoard[temp - 'A'];
 		//rotor II
 		temp = (rotorTable[1][((temp - 'A') + messageKey[2] - ringSetting[2] + 26) % 26] - 'A' - messageKey[2] + ringSetting[2] + 26) % 26 + 'A';
-		//rotor ¢ó
+		//rotor Â¢Ã³
 		temp = (rotorTable[2][((temp - 'A') + messageKey[1] - ringSetting[1] + 26) % 26] - 'A' - messageKey[1] + ringSetting[1] + 26) % 26 + 'A';
-		//rotor ¢õ
+		//rotor Â¢Ãµ
 		temp = (rotorTable[4][((temp - 'A') + messageKey[0] - ringSetting[0] + 26) % 26] - 'A' - messageKey[0] + ringSetting[0] + 26) % 26 + 'A';
 		//reflector
 		temp = reflector[temp - 'A'];
-		//rotor ¢õ
+		//rotor Â¢Ãµ
 		for (count = 0; rotorTable[4][count] != (temp - 'A' + messageKey[0] - ringSetting[0] + 26) % 26 + 'A'; count++);
 		temp = ((count - messageKey[0] + ringSetting[0]) + 26) % 26 + 'A';
-		//rotor ¢ó
+		//rotor Â¢Ã³
 		for (count = 0; rotorTable[2][count] != (temp - 'A' + messageKey[1] - ringSetting[1] + 26) % 26 + 'A'; count++);
 		temp = ((count - messageKey[1] + ringSetting[1]) + 26) % 26 + 'A';
 		//rotor II
